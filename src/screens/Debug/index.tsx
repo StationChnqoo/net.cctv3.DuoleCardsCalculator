@@ -31,6 +31,11 @@ const Debug: React.FC<DebugProps> = props => {
     r: r,
   });
 
+  useEffect(() => {
+    navigation.navigate('CardsRecorder');
+    return function () {};
+  }, []);
+
   return (
     <>
       <ToolBar

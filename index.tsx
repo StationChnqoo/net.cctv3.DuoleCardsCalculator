@@ -2,13 +2,12 @@ import React, {useEffect} from 'react';
 import {AppRegistry, StatusBar, View} from 'react-native';
 import createContext from 'zustand/context';
 // @ts-ignore
+import {useMomentChinaConfig} from '@src/utils';
+import moment from 'moment';
+import RNFS from 'react-native-fs';
 import {name as appName} from './app.json';
 import Stacks from './Stacks';
 import {useStore} from './useStore';
-import RNFS from 'react-native-fs';
-import moment from 'moment';
-import {useMomentChinaConfig} from '@src/utils';
-import {useHttp} from '@src/hooks';
 
 const StoreContext = createContext();
 
