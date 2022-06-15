@@ -4,7 +4,7 @@ import {useStore} from '@root/useStore';
 import ToolBar from '@src/components/ToolBar';
 import {useDip} from '@src/utils';
 import React, {useEffect, useState} from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {Button, ScrollView, StyleSheet, Text, View} from 'react-native';
 
 interface CardsRecorderProps {
   navigation?: RootStacksProp;
@@ -91,7 +91,7 @@ const CardsRecorder: React.FC<CardsRecorderProps> = props => {
           <View style={{height: 4}} />
           <View style={styles.viewRecordsPersonCards}>
             {cards.map((item, index) => (
-              <Text style={{fontSize: useDip(16), margin: 2}}>
+              <Text key={index} style={{fontSize: useDip(16), margin: 2}}>
                 {item.value}
               </Text>
             ))}
@@ -110,7 +110,7 @@ const CardsRecorder: React.FC<CardsRecorderProps> = props => {
         }}
         title="测试页面"
       />
-      <View style={{padding: 12}}>
+      <ScrollView style={{padding: 12}}>
         <Text style={{fontSize: useDip(20), color: '#333', fontWeight: 'bold'}}>
           剩余的牌
         </Text>
@@ -162,7 +162,7 @@ const CardsRecorder: React.FC<CardsRecorderProps> = props => {
             setR(Math.random());
           }}
         />
-      </View>
+      </ScrollView>
     </>
   );
 };
