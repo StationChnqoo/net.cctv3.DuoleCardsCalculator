@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dip"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="采之汲用户协议与隐私政策"
+            android:textSize="18dip"
+            android:textColor="#333"
+            android:id="@+id/dialog_once_title"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dip" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text=""
+            android:textSize="16dip"
+            android:textColor="#333"
+            android:id="@+id/dialog_once_message"
+            android:lineSpacingMultiplier="0"
+            android:lineSpacingExtra="22dip"
+            android:autoLink="web"
+            />
+    </LinearLayout>
+</LinearLayout>
