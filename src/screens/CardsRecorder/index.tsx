@@ -115,31 +115,33 @@ const CardsRecorder: React.FC<CardsRecorderProps> = props => {
           剩余的牌
         </Text>
         <View style={{height: 12}} />
-        <View style={{flexDirection: 'row'}}>
-          {datas.map((it, i) => (
-            <View
-              style={{
-                alignItems: 'center',
-                marginRight: i == datas.length - 1 ? 0 : 4,
-              }}
-              key={i}>
-              <View style={{alignItems: 'center'}}>
-                <Text
-                  style={{
-                    fontSize: useDip(18),
-                    color: {D: '#ff5252', X: '#987123'}?.[it.name] ?? '#333',
-                    fontWeight: 'bold',
-                  }}>
-                  {{D: '大虎', X: '小虎'}?.[it.name] ?? it.name}
-                </Text>
-                <View style={{height: 4}} />
-                <Text style={{fontSize: useDip(16), color: '#666'}}>
-                  {it.value}
-                </Text>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          <View style={{flexDirection: 'row'}}>
+            {datas.map((it, i) => (
+              <View
+                style={{
+                  alignItems: 'center',
+                  width: ['D', 'X'].includes(it.name) ? 48 : 32,
+                }}
+                key={i}>
+                <View style={{alignItems: 'center'}}>
+                  <Text
+                    style={{
+                      fontSize: useDip(18),
+                      color: {D: '#ff5252', X: '#987123'}?.[it.name] ?? '#333',
+                      fontWeight: 'bold',
+                    }}>
+                    {{D: '大虎', X: '小虎'}?.[it.name] ?? it.name}
+                  </Text>
+                  <View style={{height: 4}} />
+                  <Text style={{fontSize: useDip(16), color: '#666'}}>
+                    {it.value}
+                  </Text>
+                </View>
               </View>
-            </View>
-          ))}
-        </View>
+            ))}
+          </View>
+        </ScrollView>
         <View style={{height: 12}} />
         <Text style={{fontSize: useDip(20), color: '#333', fontWeight: 'bold'}}>
           出牌记录
